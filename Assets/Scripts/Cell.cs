@@ -5,35 +5,31 @@ using UnityEngine.UI;
 
 public interface ICell
 {
-    void CellOpen(Cell cell);
+    void BigCell(Cell cell);
 }
 
 public class Cell : MonoBehaviour
 {
     [SerializeField] RectTransform content;
-    [SerializeField] Text questName;
-    float cellHeight = 200f;
+    [SerializeField] GameObject dtailView;
     public ICell cellDelegate;
+    float cellHeight = 200f;
+    
     bool isOn;
 
-    public string QuestName
+    private void Awake()
     {
-        get
-        {
-            return this.questName.text;
-        }
-        set
-        {
-            this.questName.text = value;
-        }
+        dtailView.SetActive(false);
     }
 
     public void OnClick()
     {
+        cellDelegate.BigCell(this);
 
         if (isOn == false)
         {
             content.sizeDelta = new Vector2(1080, cellHeight * 2);
+            dtailView.SetActive(true);
             isOn = true;
             Debug.Log(isOn);
         }
@@ -41,6 +37,7 @@ public class Cell : MonoBehaviour
         else
         {
             content.sizeDelta = new Vector2(1080, cellHeight);
+            dtailView.SetActive(false);
             isOn = false;
         }
     }
