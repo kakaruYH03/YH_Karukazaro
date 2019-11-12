@@ -21,9 +21,4 @@ public class AnimationManager : MonoBehaviour
     {
         animator.SetTrigger(Constant.kViewManagerClose);
     }
-
-    public void ExitAnimator()
-    {
-        gameObject.SetActive(false);
-    }
 }
