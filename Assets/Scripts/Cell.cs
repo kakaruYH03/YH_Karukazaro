@@ -16,6 +16,7 @@ public class Cell : MonoBehaviour
     [SerializeField] Text explantion;
     [SerializeField] Text comPensation;
     
+
     public ICell cellDelegate;
     float cellHeight = 200f;
     Animator animator;
@@ -31,21 +32,21 @@ public class Cell : MonoBehaviour
     {
         cellDelegate.BigCell(this);
 
+
         if (isOn == false)
         {
             content.sizeDelta = new Vector2(1080, cellHeight * 2);
             Open();
             isOn = true;
-            Debug.Log(isOn);
         }
 
         else
         {
             content.sizeDelta = new Vector2(1080, cellHeight);
             Close();
-            
             isOn = false;
         }
+
     }
    
     protected virtual void Awake()

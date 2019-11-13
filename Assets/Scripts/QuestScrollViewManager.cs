@@ -23,13 +23,17 @@ public class QuestScrollViewManager : MonoBehaviour, ICell
 
                 Cell cell = Instantiate(cellPrefab, cellContent).GetComponent<Cell>();
                 cell.SetcellData(person);
+                cellList.Add(cell);
                 cell.cellDelegate = this;
             }
         }
     }
 
+    // TODO: 각 Cell에 index 값을 넣는다
+    // cell을 클릭해서 커졌을때 다른셀을 눌러도 cellcontent가 늘어나게 하기 or 이전에 누른셀은 축소하고 다른셀을 늘리기
+
     public void BigCell(Cell cell)
     {
-        cellContent.sizeDelta = new Vector2(0, cellList.Count + cellHeight);
+        cellContent.sizeDelta = new Vector2(0, cellList.Count * cellHeight);
     }
 }
