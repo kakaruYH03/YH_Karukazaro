@@ -2127,7 +2127,7 @@ Animator:
   m_GameObject: {fileID: 818744456}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97e83752e1e795644a43278b877b0004, type: 2}
+  m_Controller: {fileID: 9100000, guid: cd91afac2b9206b4f8806ad3b4ceb777, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2288,7 +2288,12 @@ PrefabInstance:
     - target: {fileID: 7272285258170182596, guid: dc429b402a99aa34684a09b18c0d1221,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.02122415
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272285258170182596, guid: dc429b402a99aa34684a09b18c0d1221,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7272285257240924850, guid: dc429b402a99aa34684a09b18c0d1221,
         type: 3}
@@ -2323,6 +2328,11 @@ PrefabInstance:
     - target: {fileID: 7272285257639602241, guid: dc429b402a99aa34684a09b18c0d1221,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272285257639602241, guid: dc429b402a99aa34684a09b18c0d1221,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7272285256566961621, guid: dc429b402a99aa34684a09b18c0d1221,
@@ -3972,7 +3982,7 @@ PrefabInstance:
     - target: {fileID: 9115262832011164506, guid: 830be7e3dfe27fa499337f3cbc55ed3e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.021241294
+      value: 0.000076293945
       objectReference: {fileID: 0}
     - target: {fileID: 9115262832695376815, guid: 830be7e3dfe27fa499337f3cbc55ed3e,
         type: 3}
@@ -3992,6 +4002,11 @@ PrefabInstance:
     - target: {fileID: 9115262832545937631, guid: 830be7e3dfe27fa499337f3cbc55ed3e,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115262832545937631, guid: 830be7e3dfe27fa499337f3cbc55ed3e,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9115262831471125835, guid: 830be7e3dfe27fa499337f3cbc55ed3e,

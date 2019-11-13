@@ -14,10 +14,11 @@ public class Cell : MonoBehaviour
     [SerializeField] GameObject dtailView;
     public ICell cellDelegate;
     float cellHeight = 200f;
-    
+    Animator animator;
+
     bool isOn;
 
-    private void Awake()
+    private void Start()
     {
         dtailView.SetActive(false);
     }
@@ -29,7 +30,7 @@ public class Cell : MonoBehaviour
         if (isOn == false)
         {
             content.sizeDelta = new Vector2(1080, cellHeight * 2);
-            dtailView.SetActive(true);
+            Open();
             isOn = true;
             Debug.Log(isOn);
         }
@@ -37,9 +38,36 @@ public class Cell : MonoBehaviour
         else
         {
             content.sizeDelta = new Vector2(1080, cellHeight);
-            dtailView.SetActive(false);
+            Close();
+            
             isOn = false;
         }
     }
+   
+    protected virtual void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
+    // 애니메이션
+    public void Open()
+    {
+        animator.SetTrigger(Constant.kViewManagerOpen);
+    }
+
+    public void Close()
+    {
+        animator.SetTrigger(Constant.kViewManagerClose);
+    }
+
+    // 애니메이션 종료후 동작
+    public void OpenText()
+    {
+        dtailView.SetActive(true);
+    }
+
+    public void CloseText()
+    {
+        dtailView.SetActive(false);
+    }
 }
