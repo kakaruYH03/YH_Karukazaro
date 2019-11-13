@@ -2,34 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System;
 
-public class FileManager<T> where T : struct
+public class FileManager
 {
-    public static T? Load(string fileName)
+    static public List<Person> LoadData(byte[] data)
     {
-        T? items = null;
+        List<Person> resultList = new List<Person>();
 
-        string filePath = $"{Application.persistentDataPath}\\{fileName}";
+        Stream stream = new MemoryStream(data);
+        StreamReader reader = new StreamReader(stream);
 
-        if (File.Exists(filePath))
+        string lineValue;
+
+        while ((lineValue = reader.ReadLine()) != null)
         {
-            using (StreamReader streamReader = new StreamReader(filePath))
+
+            string[] values = lineValue.Split(',');
+            try
             {
-                string jsonStr = streamReader.ReadToEnd();
-                items = JsonUtility.FromJson<T>(jsonStr);
+                Person person = new Person(values[0], (values[1]), values[2]);
+                resultList.Add(person);
+            }
+            catch (FormatException)
+            {
+
             }
         }
-        return items;
-    }
-
-    public static void Save(T items, string fileName)
-    {
-        string filePath = $"{Application.persistentDataPath}\\{fileName}";
-
-        using (StreamWriter streamWriter = new StreamWriter(filePath))
-        {
-            string jsonStr = JsonUtility.ToJson(items);
-            streamWriter.Write(jsonStr);
-        }
+        reader.Close();
+        return resultList;
     }
 }

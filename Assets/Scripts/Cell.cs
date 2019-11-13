@@ -12,6 +12,10 @@ public class Cell : MonoBehaviour
 {
     [SerializeField] RectTransform content;
     [SerializeField] GameObject dtailView;
+    [SerializeField] Text questText;
+    [SerializeField] Text explantion;
+    [SerializeField] Text comPensation;
+    
     public ICell cellDelegate;
     float cellHeight = 200f;
     Animator animator;
@@ -69,5 +73,12 @@ public class Cell : MonoBehaviour
     public void CloseText()
     {
         dtailView.SetActive(false);
+    }
+
+    public void SetcellData(Person cellData)
+    {
+        this.questText.text = cellData.questName;
+        this.explantion.text = cellData.quest;
+        this.comPensation.text = cellData.Compensation;
     }
 }

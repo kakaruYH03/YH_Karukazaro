@@ -562,8 +562,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: {fileID: 4686636972825596040}
   dtailView: {fileID: 6664871945595890170}
-  cellPrefab: {fileID: 4686636972825596043}
-  cellSize: {fileID: 0}
+  questText: {fileID: 4686636972865242716}
+  explantion: {fileID: 7058342062052060446}
+  comPensation: {fileID: 4597455056632723059}
 --- !u!95 &3054753683806141314
 Animator:
   serializedVersion: 3
