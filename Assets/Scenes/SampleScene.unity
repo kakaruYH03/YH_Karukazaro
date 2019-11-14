@@ -908,7 +908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &268728322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -941,7 +941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.67044735, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5882,7 +5882,7 @@ PrefabInstance:
     - target: {fileID: 2241845465704265250, guid: 830be7e3dfe27fa499337f3cbc55ed3e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 16.426718
+      value: -0.000053193024
       objectReference: {fileID: 0}
     - target: {fileID: 2241845466109936153, guid: 830be7e3dfe27fa499337f3cbc55ed3e,
         type: 3}
