@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public interface ICell
-{
-    void BigCell(Cell cell);
-}
-
 public class Cell : MonoBehaviour
 {
     [SerializeField] RectTransform content;
@@ -17,7 +12,6 @@ public class Cell : MonoBehaviour
     [SerializeField] Text comPensation;
     
 
-    public ICell cellDelegate;
     float cellHeight = 200f;
     Animator animator;
 
@@ -30,8 +24,6 @@ public class Cell : MonoBehaviour
 
     public void OnClick()
     {
-        cellDelegate.BigCell(this);
-
 
         if (isOn == false)
         {
